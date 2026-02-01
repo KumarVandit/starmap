@@ -1,0 +1,11 @@
+# Starmap Dependencies
+
+# Core
+requests>=2.31.0
+python-dotenv>=1.0.0
+
+# MCP Server
+mcp>=0.9.0
+
+# Optional: For advanced features
+PyGithub>=2.1.1
