@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  starmap:
+    build: .
+    container_name: starmap
+    restart: unless-stopped
+    environment:
+      - GITHUB_USERNAME=${GITHUB_USERNAME}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - SUPERMEMORY_API_KEY=${SUPERMEMORY_API_KEY}
+      - SUPERMEMORY_API_URL=${SUPERMEMORY_API_URL}
+      - TARGET_REPO_OWNER=${TARGET_REPO_OWNER}
+      - TARGET_REPO_NAME=${TARGET_REPO_NAME}
+      - TARGET_BRANCH=${TARGET_BRANCH}
+    volumes:
+      - ./starred-repos.md:/app/starred-repos.md
+    env_file:
+      - .env
